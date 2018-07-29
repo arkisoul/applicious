@@ -1,0 +1,35 @@
+.container--cta
+    @media (min-width: 47rem)
+        width: 50%
+.cta
+    background-color: $secondary
+    color: $text-inverse
+    background-image: url('../img/cta-bg.jpg')
+    background-size: cover
+    background-position: center
+    background-blend-mode: multiply
+    padding: 5em 0
+    position: relative
+    overflow: hidden
+
+    @media (min-width: 47rem)
+        padding: 10em 0
+
+        &::before, &::after
+            content: ''
+            background: $accent
+            position: absolute
+            width: 100%
+            border: 1em solid $white
+
+        &::before
+            top: 0
+            bottom: -1em
+            left: -100%
+            transform: skewX(60deg)
+
+        &::after
+            top: -1em
+            bottom: 0
+            right: -100%
+            transform: skewX(60deg)

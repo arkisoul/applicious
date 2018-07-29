@@ -1,0 +1,102 @@
+.main-nav
+    background: $accent
+    position: absolute
+    top: 0
+    left: 100%
+    right: 0
+    font-size: 1.2rem
+    overflow: hidden
+    transition: all ease-in-out 300ms
+
+    .nav-bar
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        height: 100vh
+
+        @media (min-width: 47rem)
+            flex-direction: row
+            height: auto
+
+    .nav-item
+        flex: 1 1 auto
+        display: flex
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+
+        @media (min-width: 47rem)
+            border-bottom: none
+            display: inline-block
+            text-align: right
+
+    .nav-link
+        text-decoration: none
+        color: $text-inverse
+        flex-basis: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: all ease-in-out 350ms
+
+        &:hover
+            background: rgba(0, 0, 0, 0.19)
+
+            @media (min-width: 47rem)
+                background: none
+                color: darken($accent, 15%)
+
+        @media (min-width: 47rem)
+            display: inline
+
+    &.is-open
+        left: 0
+
+    @media (min-width: 47rem)
+        position: static
+        margin-top: -1em
+        align-self: center
+        background: none
+        flex: auto
+        margin-left: 2em
+
+// Hamburger menu
+.nav-toggle
+    color: $text-inverse
+    font-size: 0.7rem
+    position: absolute
+    top: 1em
+    right: 1em
+    padding: 1em
+    display: flex
+    align-items: center
+
+    .hamburger
+        margin-left: 0.6em
+
+        &, &::before, &::after
+            content: ''
+            display: block
+            background: $white
+            width: 2em
+            height: 3px
+            border-radius: 0.25em
+            transition: all ease-in-out 300ms
+
+        &::before
+            transform: translateY(-6px)
+
+        &::after
+            transform: translateY(3px)
+
+    &.is-open
+        .hamburger
+            transform: rotate(45deg)
+
+            &::before
+                opacity: 0
+
+            &::after
+                transform: translateY(-3px) rotate(-90deg)
+
+    @media (min-width: 47rem)
+        display: none
+

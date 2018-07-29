@@ -1,0 +1,30 @@
+*, *::before, *::after
+    box-sizing: border-box
+
+body
+    color: $text-main
+    text-align: center
+
+img
+    max-width: 100%
+    height: auto
+
+.container
+    width: 90%
+    max-width: 75rem
+    margin: 0 auto
+
+.unstyled-list
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+.lg-screen
+    display: none
+    @media (min-width: 47rem)
+        display: block
+
+.bg-main
+    background: $main
+    color: $text-inverse
+    padding: 5em 2.5em
